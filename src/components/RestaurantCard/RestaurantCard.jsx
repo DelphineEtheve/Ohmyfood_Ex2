@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./RestaurantCard.module.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as faHeartRegular} from "@fortawesome/free-regular-svg-icons";
@@ -9,11 +10,10 @@ import { useState } from "react";
 
 
 
-function RestaurantCard ({name, location, image,isNew}){
+function RestaurantCard ({name, location, image,isNew, slug}){
     
     
     const [isLiked, setIsLiked] = useState(false);
-    console.log("Valeur actuelle :", isLiked);
     function handleLike() {
         setIsLiked(!isLiked);
     }
@@ -31,7 +31,7 @@ function RestaurantCard ({name, location, image,isNew}){
             </div>
             <div className={styles.restaurantInfo}>
                 <div className={styles.restaurantTexte}>
-                    <h3>{name}</h3>
+                    <h3><Link href={`/restaurant/${slug}`} className={styles.menuLink} aria-label={`Voir le menu de ${name}`}>{name}</Link></h3>
                     <p>{location}</p>
                 </div>
                 <button 

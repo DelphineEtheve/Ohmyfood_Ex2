@@ -7,11 +7,12 @@ export default function RestaurantHeader({ name }) {
 
   return (
     <div className="restaurantHeader">
-      <h2 className="restaurantName">{name}</h2>
+      <h1 className="restaurantName">{name}</h1>
       <button 
         className={`favoriteButton ${isLiked ? 'liked' : ''}`}
         onClick={() => setIsLiked(!isLiked)}
         aria-label={isLiked ? "Retirer des favoris" : "Ajouter aux favoris"}
+        aria-pressed={isLiked}
       >
         <svg 
           viewBox="0 0 24 24" 
@@ -31,4 +32,4 @@ export default function RestaurantHeader({ name }) {
       </button>
     </div>
   );
-} 
+}

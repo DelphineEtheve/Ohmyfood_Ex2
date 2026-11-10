@@ -34,6 +34,7 @@ export default function Home() {
             {data.restaurants.map((restaurant)=>(
                <RestaurantCard
                   key={restaurant.id}
+                  slug={restaurant.slug}
                   image={restaurant.image}
                   name={restaurant.name}
                   location={restaurant.location}

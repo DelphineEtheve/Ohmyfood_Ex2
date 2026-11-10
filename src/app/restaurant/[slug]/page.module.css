@@ -1,0 +1,60 @@
+.page {
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.backLink {
+  color: #7038b4;
+  text-decoration: underline;
+  align-self: flex-start;
+}
+
+.hero {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height: 380px;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.menuPanel {
+  position: relative;
+  background: #f6f6f6;
+  border-radius: 40px 40px 0 0;
+  margin: -40px auto 0;
+  padding: 48px 24px;
+}
+
+.menuContent {
+  max-width: 634px;
+  margin: 0 auto;
+}
+
+.category {
+  margin-bottom: 40px;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    height: 275px;
+  }
+
+  .menuPanel {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding: 32px 16px;
+  }
+
+  .menuPanel :global(.restaurantHeader) {
+    gap: 1rem;
+  }
+
+  .menuPanel :global(.restaurantName) {
+    font-size: 1.6rem;
+  }
+}
